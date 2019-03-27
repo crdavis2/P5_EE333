@@ -15,21 +15,5 @@
  * @author Collin Davis crdavis2@uab.edu
  */
 public class Controller {
-    public static void main(String[] args) {
-        // will add soon
-        
-        // options
-            // add bulb
-            // set state of bulb
-            // get state
-            // set brightness
-            // get brightness
-            // set color
-            // get color
-            // create mood
-            // set mood
-            // create group
-            // set group
-    }
-
+    
 }
