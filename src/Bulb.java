@@ -22,13 +22,15 @@ public class Bulb {
     private int     brightness;
     private Color   color;
     private String  id;
+    private String  bulbName;
     private int     bulbCount = 1;
     
     /**
      * Constructor for objects of class Bulb
      */
-    public Bulb() {
-        state = true;
+    public Bulb(String name) {
+        bulbName = name;
+        state = false;
         brightness = 100;
         color = Color.WHITE;
         id = "Bulb-" + bulbCount;
@@ -38,7 +40,7 @@ public class Bulb {
     /**
     * Set (change) the state of the bulb
     * 
-    * @param state on" or "off" value of bulb (true is on, false is off)
+    * @param state "on" or "off" value of bulb (true is on, false is off)
     */
     public void setState(boolean state) {
         this.state = state;
