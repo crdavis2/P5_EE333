@@ -34,13 +34,7 @@ public class HubNGTest {
      */
     @Test
     public void testGetHubName() {
-        System.out.println("getHubName");
-        Hub instance = null;
-        String expResult = "";
-        String result = instance.getHubName();
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -48,11 +42,7 @@ public class HubNGTest {
      */
     @Test
     public void testAddBulb() {
-        System.out.println("addBulb");
-        String bulbName = "";
-        Hub.addBulb(bulbName);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -60,12 +50,7 @@ public class HubNGTest {
      */
     @Test
     public void testChangeState() {
-        System.out.println("changeState");
-        String bulbName = "";
-        boolean state = false;
-        Hub.changeState(bulbName, state);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -73,12 +58,7 @@ public class HubNGTest {
      */
     @Test
     public void testChangeBrightness() {
-        System.out.println("changeBrightness");
-        String bulbName = "";
-        int brightness = 0;
-        Hub.changeBrightness(bulbName, brightness);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+       
     }
 
     /**
@@ -86,12 +66,7 @@ public class HubNGTest {
      */
     @Test
     public void testChangeColor() {
-        System.out.println("changeColor");
-        String bulbName = "";
-        String color = "";
-        Hub.changeColor(bulbName, color);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
 }
