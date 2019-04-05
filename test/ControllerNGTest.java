@@ -18,57 +18,30 @@ import org.testng.annotations.Test;
  */
 public class ControllerNGTest {
 
+    Controller c1;
+    
     public ControllerNGTest() {
     }
 
     @BeforeMethod
     public void setUpMethod() throws Exception {
+        c1 = new Controller("TestController01");
     }
 
     @AfterMethod
     public void tearDownMethod() throws Exception {
     }
 
-    /**
-     * Test of addhub method, of class Controller.
-     */
-    @Test
-    public void testAddhub() {
-        System.out.println("addhub");
-        String name = "";
-        Controller instance = null;
-        instance.addhub(name);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of addBulb method, of class Controller.
-     */
-    @Test
-    public void testAddBulb() {
-        System.out.println("addBulb");
-        String hubName = "";
-        String bulbName = "";
-        Controller instance = null;
-        instance.addBulb(hubName, bulbName);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
 
     /**
      * Test of changeBulbState method, of class Controller.
      */
     @Test
     public void testChangeBulbState() {
-        System.out.println("changeBulbState");
-        String hubName = "";
-        String bulbName = "";
-        boolean state = false;
-        Controller instance = null;
-        instance.changeBulbState(hubName, bulbName, state);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        c1.addHub("TestHub01");
+        c1.addBulb("TestHub01", "TestBulb01");
+        c1.changeBulbBrightness("TestHub01", "TestBulb01", 10);
+        assertEquals(b1.getBrightness(), 10);
     }
 
     /**
@@ -76,14 +49,7 @@ public class ControllerNGTest {
      */
     @Test
     public void testChangeBulbBrightness() {
-        System.out.println("changeBulbBrightness");
-        String hubName = "";
-        String bulbName = "";
-        int brightness = 0;
-        Controller instance = null;
-        instance.changeBulbBrightness(hubName, bulbName, brightness);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**
@@ -91,14 +57,7 @@ public class ControllerNGTest {
      */
     @Test
     public void testChangeBulbColor() {
-        System.out.println("changeBulbColor");
-        String hubName = "";
-        String bulbName = "";
-        String color = "";
-        Controller instance = null;
-        instance.changeBulbColor(hubName, bulbName, color);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
 }

@@ -41,7 +41,7 @@ public class Controller {
      *
      * @param name name of the hub to add to the system
      */
-    public void addhub(String name) {
+    public void addHub(String name) {
         Hub hub = new Hub(name);
         hubList.add(hub);
     }

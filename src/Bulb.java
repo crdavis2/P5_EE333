@@ -23,7 +23,7 @@ public class Bulb {
     private Color   color;
     private String  id;
     private String  bulbName;
-    private int     bulbCount = 0;
+    private int     bulbCount = 1;
     
     /**
      * Constructor for objects of class Bulb
@@ -34,9 +34,8 @@ public class Bulb {
         state = false;
         brightness = 100;
         color = Color.WHITE;
-        id = "Bulb-0" + ++bulbCount;
+        id = "Bulb-0" + bulbCount;
         bulbCount++;
-
     }
     
     /**
