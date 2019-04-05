@@ -46,6 +46,14 @@ public class Hub {
         bulbList.add(bulb);
     }
     
+    /**
+     * Add bulb to the system
+     *
+     * @param name name of the bulb to add to the system
+     */
+    public static void changeState(String name) {
+        
+    }
     
 
 }
