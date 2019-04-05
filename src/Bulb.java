@@ -136,6 +136,16 @@ public class Bulb {
     }
     
     /**
+    * Set (change) the group of the bulb. Each bulb can only be assigned
+    * to one group.
+    * 
+    * @param group new group to be set
+    */
+    public void setGroup(String group) {
+        
+    }
+    
+    /**
     * Set (change) the name of the bulb
     * 
     * @param newName new name for the bulb

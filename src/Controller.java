@@ -14,12 +14,12 @@ import java.util.ArrayList;
  */
 public class Controller {
     
-    private int          numControllers      = 0;
-    private int          numHubs             = 0;
-    private int          numBulbs            = 0;
-    private String       controllerName;
-    private String       hubName;
-    ArrayList<Hub> hubList = new ArrayList<>();
+    private int            numControllers      = 0;
+    private int            numHubs             = 0;
+    private int            numBulbs            = 0;
+    private String         controllerName;
+    private String         hubName;
+    private ArrayList<Hub> hubList = new ArrayList<>();
     
     /**
      * Constructor for objects of class Controller with name
@@ -58,7 +58,27 @@ public class Controller {
         
         for (i=0; i<= hubList.size(); i++) {
             if ( hubName.equals( hubList.get(j).getHubName() ) ) {
-                Hub.addBulb(bulbName);
+                hubList.get(j).addBulb(bulbName);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+    /**
+     * Add bulb to the system
+     *
+     * @param hubName   name of desired hub to be used
+     * @param groupName name of group to be added
+     */
+    public void addGroup(String hubName, String groupName) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= hubList.size(); i++) {
+            if ( hubName.equals( hubList.get(j).getHubName() ) ) {
+                hubList.get(j).addGroup(groupName);
             } else {
                 // desired hub not found yet
                 j++;
@@ -79,7 +99,7 @@ public class Controller {
         
         for (i=0; i<= hubList.size(); i++) {
             if ( hubName.equals( hubList.get(j).getHubName() ) ) {
-                Hub.changeState(bulbName, state);
+                hubList.get(j).changeState(bulbName, state);
             } else {
                 // desired hub not found yet
                 j++;
@@ -101,7 +121,7 @@ public class Controller {
         
         for (i=0; i<= hubList.size(); i++) {
             if ( hubName.equals( hubList.get(j).getHubName() ) ) {
-                Hub.changeBrightness(bulbName, brightness);
+                hubList.get(j).changeBrightness(bulbName, brightness);
             } else {
                 // desired hub not found yet
                 j++;
@@ -123,7 +143,7 @@ public class Controller {
         
         for (i=0; i<= hubList.size(); i++) {
             if ( hubName.equals( hubList.get(j).getHubName() ) ) {
-                Hub.changeColor(bulbName, color);
+                hubList.get(j).changeColor(bulbName, color);
             } else {
                 // desired hub not found yet
                 j++;

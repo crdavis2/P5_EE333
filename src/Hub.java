@@ -14,8 +14,10 @@ import java.util.ArrayList;
  */
 public class Hub {
 
-    private String hubName;
-    static ArrayList<Bulb> bulbList = new ArrayList<Bulb>();
+    private String           hubName;
+    private ArrayList<Bulb>  bulbList  = new ArrayList<>();
+    private ArrayList<Group> groupList = new ArrayList<>();
+
     
     /**
      * Constructor for objects of class Hub with name
@@ -41,9 +43,19 @@ public class Hub {
      *
      * @param bulbName name of the bulb to add to the system
      */
-    public static void addBulb(String bulbName) {
+    public void addBulb(String bulbName) {
         Bulb bulb = new Bulb(bulbName);
         bulbList.add(bulb);
+    }
+    
+    /**
+     * Add group to the system
+     *
+     * @param groupName name of the group to add to the system
+     */
+    public void addGroup(String groupName) {
+        Group group = new Group(groupName);
+        groupList.add(group);
     }
     
     /**
@@ -52,7 +64,7 @@ public class Hub {
      * @param bulbName name of the bulb to add to the system
      * @param state    "on" or "off" state to be changed
      */
-    public static void changeState(String bulbName, boolean state) {
+    public void changeState(String bulbName, boolean state) {
         int i;
         int j = 0;
         
@@ -72,7 +84,7 @@ public class Hub {
      * @param bulbName   current name of the bulb 
      * @param newName    new name for the bulb
      */
-    public static void changeBulbName(String bulbName, String newName) {
+    public void changeBulbName(String bulbName, String newName) {
         int i;
         int j = 0;
         
@@ -92,7 +104,7 @@ public class Hub {
      * @param bulbName    name of the bulb
      * @param brightness  brightness of the bulb
      */
-    public static void changeBrightness(String bulbName, int brightness) {
+    public void changeBrightness(String bulbName, int brightness) {
         int i;
         int j = 0;
         
@@ -112,7 +124,7 @@ public class Hub {
      * @param bulbName   name of the bulb 
      * @param color      color level of the bulb
      */
-    public static void changeColor(String bulbName, String color) {
+    public void changeColor(String bulbName, String color) {
         int i;
         int j = 0;
         
