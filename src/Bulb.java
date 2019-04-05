@@ -19,8 +19,8 @@ public class Bulb {
     }
     
     private static  boolean state;
-    private int     brightness;
-    private Color   color;
+    private static  int     brightness;
+    private static  Color   color;
     private String  id;
     private String  bulbName;
     private int     bulbCount = 1;
@@ -34,7 +34,7 @@ public class Bulb {
         state = false;
         brightness = 100;
         color = Color.WHITE;
-        id = "Bulb-" + bulbCount;
+        id = "Bulb-0" + bulbCount;
         bulbCount++;
     }
     
@@ -64,13 +64,13 @@ public class Bulb {
     * 
     * @param brightness new brightness value 0-100 with 100 the brightest
     */
-    public void setBrightness(int brightness) {
+    public static void setBrightness(int brightness) {
         if (brightness < 0) {
-            this.brightness = 0;
+            Bulb.brightness = 0;
         } else if (brightness > 100) {
-            this.brightness = 100;
+            Bulb.brightness = 100;
         } else {
-            this.brightness = brightness;
+            Bulb.brightness = brightness;
         }
     }
     
@@ -89,33 +89,33 @@ public class Bulb {
     * 
     * @param color new color to be set
     */
-    public void setColor(String color) {
+    public static void setColor(String color) {
         String testStr = color.toUpperCase();
         
         switch (testStr) {
             case "WHITE":
-                this.color = Color.WHITE;
+                Bulb.color = Color.WHITE;
                 break;
             case "RED":
-                this.color = Color.RED;
+                Bulb.color = Color.RED;
                 break;
             case "ORANGE":
-                this.color = Color.ORANGE;
+                Bulb.color = Color.ORANGE;
                 break;
             case "YELLOW":
-                this.color = Color.YELLOW;
+                Bulb.color = Color.YELLOW;
                 break;
             case "GREEN":
-                this.color = Color.GREEN;
+                Bulb.color = Color.GREEN;
                 break;
             case "BLUE":
-                this.color = Color.BLUE;
+                Bulb.color = Color.BLUE;
                 break;
             case "INDIGO":
-                this.color = Color.INDIGO;
+                Bulb.color = Color.INDIGO;
                 break;
             case "VIOLET":
-                this.color = Color.VIOLET;
+                Bulb.color = Color.VIOLET;
                 break;
         // ERROR handling should go in a different class (hub probably)
             default:

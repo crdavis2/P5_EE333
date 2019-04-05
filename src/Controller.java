@@ -69,19 +69,63 @@ public class Controller {
     }
     
     /**
-     * Add bulb to the system
+     * Change the state of the bulb
      *
      * @param hubName  name of desired hub to be used
      * @param bulbName name of bulb to be added
      * @param state    "on" or "off" state to be changed
      */
-    public void changeState(String hubName, String bulbName, boolean state) {
+    public void changeBulbState(String hubName, String bulbName, boolean state) {
         int i;
         int j = 0;
         
         for (i=0; i<= hubList.size(); i++) {
             if ( hubName.equals( hubList.get(j).getHubName() ) ) {
                 Hub.changeState(bulbName, state);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+    /**
+     * Change the brightness of the bulb
+     *
+     * @param hubName    name of desired hub to be used
+     * @param bulbName   name of bulb to be added
+     * @param brightness level of brightness to be changed
+     */
+    public void changeBulbBrightness(String hubName, String bulbName, 
+                                     int brightness) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= hubList.size(); i++) {
+            if ( hubName.equals( hubList.get(j).getHubName() ) ) {
+                Hub.changeBrightness(bulbName, brightness);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+    /**
+     * Change the color of the bulb
+     *
+     * @param hubName    name of desired hub to be used
+     * @param bulbName   name of bulb to be added
+     * @param color      color of bulb to be changed
+     */
+    public void changeBulbColor(String hubName, String bulbName, 
+                                     String color) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= hubList.size(); i++) {
+            if ( hubName.equals( hubList.get(j).getHubName() ) ) {
+                Hub.changeColor(bulbName, color);
             } else {
                 // desired hub not found yet
                 j++;

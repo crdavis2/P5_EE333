@@ -66,5 +66,45 @@ public class Hub {
         }
     }
     
+    /**
+     * Add bulb to the system
+     *
+     * @param bulbName   name of the bulb to add to the system
+     * @param brightness brightness level of the bulb
+     */
+    public static void changeBrightness(String bulbName, int brightness) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= bulbList.size(); i++) {
+            if ( bulbName.equals( bulbList.get(j).getBulbName() ) ) {
+                Bulb.setBrightness(brightness);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+    /**
+     * Add bulb to the system
+     *
+     * @param bulbName   name of the bulb to add to the system
+     * @param color brightness level of the bulb
+     */
+    public static void changeColor(String bulbName, String color) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= bulbList.size(); i++) {
+            if ( bulbName.equals( bulbList.get(j).getBulbName() ) ) {
+                Bulb.setColor(color);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
 
 }
