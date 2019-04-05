@@ -6,6 +6,7 @@
  *
  */
 
+import java.util.ArrayList;
 
 /**
  * Hub class used to control bulbs and inputs from controllers
@@ -14,6 +15,7 @@
 public class Hub {
 
     private String hubName;
+    ArrayList<Hub> hubList = new ArrayList<Hub>();
     
     /**
      * Constructor for objects of class Hub with name
@@ -28,8 +30,21 @@ public class Hub {
         } else {
             hubName = name;
         }
-
     }
+    
+    public String getHubName() {
+        return hubName;
+    }
+    
+   /**
+     * Add bulb to the system
+     *
+     * @param bulb the bulb to add to the system
+     */
+    public static void addBulb(String bulbName) {
+        
+    }
+    
     
 
 }

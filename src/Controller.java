@@ -6,6 +6,7 @@
  *
  */
 
+import java.util.ArrayList;
 
 /**
  *
@@ -16,8 +17,11 @@ public class Controller {
     private Hub[]        hubs;
     private Bulb[]       bulbs;
     private int          numControllers      = 0;
+    private int          numHubs             = 0;
     private int          numBulbs            = 0;
     private String       controllerName;
+    private String       hubName;
+    ArrayList<Hub> hubList = new ArrayList<Hub>();
     
     /**
      * Constructor for objects of class Controller with name
@@ -35,14 +39,34 @@ public class Controller {
 
     }
     
-/**
+    /**
+     * Add hub to the system
+     *
+     * @param hub the hub to add to the system
+     */
+    public void addhub(String name) {
+        Hub hub = new Hub(name);
+        hubList.add(hub);
+    }
+    
+    /**
      * Add bulb to the system
      *
-     * @param bulb the bulb to add to the system
+     * @param hubName name of desired hub to be used
+     * @param bulbName name of bulb to be added
      */
-    public void addBulb(Bulb bulb) {
-        bulbs[numBulbs] = bulb;
-        numBulbs++;
+    public void addBulb(String hubName, String bulbName) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= hubList.size(); i++) {
+            if ( hubName.equals( hubList.get(j).getHubName() ) ) {
+                Hub.addBulb(bulbName);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
     }
     
 }
