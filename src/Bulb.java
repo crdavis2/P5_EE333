@@ -143,5 +143,14 @@ public class Bulb {
     public String getBulbName() {
         return bulbName;
     }
+    
+    /**
+    * Get ID of the bulb
+    * 
+    * @return id name of bulb
+    */
+    public String getBulbID() {
+        return id;
+    }
 
 }

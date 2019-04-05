@@ -14,8 +14,6 @@ import java.util.ArrayList;
  */
 public class Controller {
     
-    private Hub[]        hubs;
-    private Bulb[]       bulbs;
     private int          numControllers      = 0;
     private int          numHubs             = 0;
     private int          numBulbs            = 0;
