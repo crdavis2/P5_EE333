@@ -59,12 +59,52 @@ public class Hub {
     }
     
     /**
+     * Add bulb to the specified group
+     *
+     * @param bulbName  name of the bulb to add to the system
+     * @param groupName name of the group to which the bulb is added
+     */
+    public void addBulbToGroup(String bulbName, String groupName) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= bulbList.size(); i++) {
+            if ( bulbName.equals( bulbList.get(j).getBulbName() ) ) {
+                bulbList.get(j).setGroup(groupName);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+    /**
+     * Change group of bulb
+     *
+     * @param bulbName     name of the bulb to add to the system
+     * @param newGroupName new group to which the bulb is added
+     */
+    public void setBulbGroup(String bulbName, String newGroupName) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= bulbList.size(); i++) {
+            if ( bulbName.equals( bulbList.get(j).getBulbName() ) ) {
+                bulbList.get(j).setGroup(newGroupName);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+    /**
      * Change state of bulb
      *
      * @param bulbName name of the bulb to add to the system
      * @param state    "on" or "off" state to be changed
      */
-    public void changeState(String bulbName, boolean state) {
+    public void setBulbState(String bulbName, boolean state) {
         int i;
         int j = 0;
         
@@ -79,12 +119,72 @@ public class Hub {
     }
     
     /**
-     * Change color of bulb
+     * Change state of all bulbs within a group
+     *
+     * @param groupName name of the group to edit
+     * @param state     "on" or "off" state to be changed
+     */
+    public void setGroupState(String groupName, boolean state) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= bulbList.size(); i++) {
+            if ( groupName.equals( bulbList.get(j).getGroup() ) ) {
+                bulbList.get(j).setState(state);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+    /**
+     * Change color of all bulbs within a group
+     *
+     * @param groupName name of the group to edit
+     * @param color     color of bulb
+     */
+    public void setGroupColor(String groupName, String color) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= bulbList.size(); i++) {
+            if ( groupName.equals( bulbList.get(j).getGroup() ) ) {
+                bulbList.get(j).setColor(color);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+    /**
+     * Change brightness of all bulbs within a group
+     *
+     * @param groupName  name of the group to edit
+     * @param brightness brightness of bulb
+     */
+    public void setGroupBrightness(String groupName, int brightness) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= bulbList.size(); i++) {
+            if ( groupName.equals( bulbList.get(j).getGroup() ) ) {
+                bulbList.get(j).setBrightness(brightness);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+    /**
+     * Change name of bulb
      *
      * @param bulbName   current name of the bulb 
      * @param newName    new name for the bulb
      */
-    public void changeBulbName(String bulbName, String newName) {
+    public void setBulbName(String bulbName, String newName) {
         int i;
         int j = 0;
         
@@ -104,7 +204,7 @@ public class Hub {
      * @param bulbName    name of the bulb
      * @param brightness  brightness of the bulb
      */
-    public void changeBrightness(String bulbName, int brightness) {
+    public void setBulbBrightness(String bulbName, int brightness) {
         int i;
         int j = 0;
         
@@ -124,7 +224,7 @@ public class Hub {
      * @param bulbName   name of the bulb 
      * @param color      color level of the bulb
      */
-    public void changeColor(String bulbName, String color) {
+    public void setBulbColor(String bulbName, String color) {
         int i;
         int j = 0;
         

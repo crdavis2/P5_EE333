@@ -9,7 +9,7 @@
 
 
 /**
- *
+ * Bulb Class for smart light system
  * @author Collin Davis crdavis2@uab.edu
  */
 public class Bulb {
@@ -23,6 +23,7 @@ public class Bulb {
     private Color   color;
     private String  id;
     private String  bulbName;
+    private String  group;
     private int     bulbCount = 1;
     
     /**
@@ -136,13 +137,22 @@ public class Bulb {
     }
     
     /**
+    * Get group of the bulb
+    * 
+    * @return group name of bulb's group
+    */
+    public String getGroup() {
+        return group;
+    }
+    
+    /**
     * Set (change) the group of the bulb. Each bulb can only be assigned
     * to one group.
     * 
     * @param group new group to be set
     */
     public void setGroup(String group) {
-        
+        this.group = group;
     }
     
     /**

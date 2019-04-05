@@ -40,7 +40,7 @@ public class ControllerNGTest {
     public void testChangeBulbState() {
         c1.addHub("TestHub01");
         c1.addBulb("TestHub01", "TestBulb01");
-        c1.changeBulbBrightness("TestHub01", "TestBulb01", 10);
+        c1.setBulbBrightness("TestHub01", "TestBulb01", 10);
         // assertEquals(b1.getBrightness(), 10);
     }
 
