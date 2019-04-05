@@ -39,20 +39,31 @@ public class Hub {
    /**
      * Add bulb to the system
      *
-     * @param name name of the bulb to add to the system
+     * @param bulbName name of the bulb to add to the system
      */
-    public static void addBulb(String name) {
-        Bulb bulb = new Bulb(name);
+    public static void addBulb(String bulbName) {
+        Bulb bulb = new Bulb(bulbName);
         bulbList.add(bulb);
     }
     
     /**
      * Add bulb to the system
      *
-     * @param name name of the bulb to add to the system
+     * @param bulbName name of the bulb to add to the system
+     * @param state    "on" or "off" state to be changed
      */
-    public static void changeState(String name) {
+    public static void changeState(String bulbName, boolean state) {
+        int i;
+        int j = 0;
         
+        for (i=0; i<= bulbList.size(); i++) {
+            if ( bulbName.equals( bulbList.get(j).getBulbName() ) ) {
+                Bulb.setState(state);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
     }
     
 

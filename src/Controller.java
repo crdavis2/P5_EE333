@@ -71,16 +71,17 @@ public class Controller {
     /**
      * Add bulb to the system
      *
-     * @param hubName name of desired hub to be used
+     * @param hubName  name of desired hub to be used
      * @param bulbName name of bulb to be added
+     * @param state    "on" or "off" state to be changed
      */
-    public void changeState(String hubName, String bulbName) {
+    public void changeState(String hubName, String bulbName, boolean state) {
         int i;
         int j = 0;
         
         for (i=0; i<= hubList.size(); i++) {
             if ( hubName.equals( hubList.get(j).getHubName() ) ) {
-                Hub.changeState(bulbName);
+                Hub.changeState(bulbName, state);
             } else {
                 // desired hub not found yet
                 j++;

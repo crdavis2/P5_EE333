@@ -18,7 +18,7 @@ public class Bulb {
         WHITE, RED, ORANGE, YELLOW, GREEN, BLUE, INDIGO, VIOLET
     }
     
-    private boolean state;
+    private static  boolean state;
     private int     brightness;
     private Color   color;
     private String  id;
@@ -27,6 +27,7 @@ public class Bulb {
     
     /**
      * Constructor for objects of class Bulb
+     * @param name name of the bulb
      */
     public Bulb(String name) {
         bulbName = name;
@@ -42,8 +43,8 @@ public class Bulb {
     * 
     * @param state "on" or "off" value of bulb (true is on, false is off)
     */
-    public void setState(boolean state) {
-        this.state = state;
+    public static void setState(boolean state) {
+        Bulb.state = state;
     }
     
     
@@ -132,6 +133,15 @@ public class Bulb {
         String returnString = c.toString();
         
         return returnString;
+    }
+    
+    /**
+    * Get name of the bulb
+    * 
+    * @return bulbName name of bulb
+    */
+    public String getBulbName() {
+        return bulbName;
     }
 
 }
