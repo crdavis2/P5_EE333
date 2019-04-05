@@ -24,11 +24,18 @@ import org.testng.annotations.Test;
  */
 public class BulbNGTest {
 
+    private Bulb b1;
+    private Bulb b2;
+    private Bulb b3;
+    
     public BulbNGTest() {
     }
 
     @BeforeMethod
     public void setUpMethod() throws Exception {
+        b1 = new Bulb("TestBulb01");
+        b2 = new Bulb("TestBulb02");
+        b3 = new Bulb("TestBulb03");
     }
 
     @AfterMethod
@@ -40,11 +47,14 @@ public class BulbNGTest {
      */
     @Test
     public void testSetState() {
-        System.out.println("setState");
-        boolean state = false;
-        Bulb.setState(state);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        b1.setState(true);
+        b2.setState(false);
+        
+        assertTrue(b1.getState() == true);
+        assertTrue(b2.getState() == false);
+        // default setting is "off" (false)
+        assertTrue(b3.getState() == false);
+        
     }
 
     /**
@@ -52,13 +62,7 @@ public class BulbNGTest {
      */
     @Test
     public void testGetState() {
-        System.out.println("getState");
-        Bulb instance = null;
-        boolean expResult = false;
-        boolean result = instance.getState();
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertTrue(b3.getState() == false);
     }
 
     /**
@@ -66,11 +70,7 @@ public class BulbNGTest {
      */
     @Test
     public void testSetBrightness() {
-        System.out.println("setBrightness");
-        int brightness = 0;
-        Bulb.setBrightness(brightness);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
     }
 
     /**

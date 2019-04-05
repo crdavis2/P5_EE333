@@ -47,7 +47,7 @@ public class Hub {
     }
     
     /**
-     * Add bulb to the system
+     * Change state of bulb
      *
      * @param bulbName name of the bulb to add to the system
      * @param state    "on" or "off" state to be changed
@@ -67,7 +67,7 @@ public class Hub {
     }
     
     /**
-     * Add bulb to the system
+     * Change brightness of bulb
      *
      * @param bulbName   name of the bulb to add to the system
      * @param brightness brightness level of the bulb
@@ -87,7 +87,7 @@ public class Hub {
     }
     
     /**
-     * Add bulb to the system
+     * Change color of bulb
      *
      * @param bulbName   name of the bulb to add to the system
      * @param color brightness level of the bulb

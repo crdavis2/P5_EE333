@@ -19,7 +19,7 @@ public class Controller {
     private int          numBulbs            = 0;
     private String       controllerName;
     private String       hubName;
-    ArrayList<Hub> hubList = new ArrayList<Hub>();
+    ArrayList<Hub> hubList = new ArrayList<>();
     
     /**
      * Constructor for objects of class Controller with name
