@@ -15,8 +15,9 @@ import java.util.ArrayList;
 public class Hub {
 
     private String           hubName;
-    private ArrayList<Bulb>  bulbList  = new ArrayList<>();
-    private ArrayList<Group> groupList = new ArrayList<>();
+    private ArrayList<Bulb>  bulbList       = new ArrayList<>();
+    private ArrayList<Group> groupList      = new ArrayList<>();
+    private boolean          emergencyState = false;
 
     
     /**
@@ -238,5 +239,28 @@ public class Hub {
         }
     }
     
+    
+   /**
+     * Change brightness of all bulbs within a group
+     *
+     * @param state "active" or "inactive" state of alert
+     */
+    public void setEmergency(boolean state) {
+        int i;
+        ArrayList<Bulb>  preEmergencyBulbList = new ArrayList<>();
+        
+        if ((emergencyState == false) && (state == true)) {
+            preEmergencyBulbList = bulbList;
+            for (i=0; i <= bulbList.size(); i++) {
+                bulbList.get(i).setEmergency();
+            }
+        } else if ((emergencyState == true) && (state == false)) {
+            for (i=0; i <= bulbList.size(); i++) {
+                Bulb bulbCurrent = bulbList.get(i);
+                Bulb bulbPrior   = preEmergencyBulbList.get(i);
+                bulbCurrent = bulbPrior;
+            }
+        }
+    } 
 
 }

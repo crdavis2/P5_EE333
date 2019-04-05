@@ -181,5 +181,15 @@ public class Bulb {
     public String getBulbID() {
         return id;
     }
+    
+    /**
+    * Set the default emergency state of the bulb
+    * 
+    */
+    public void setEmergency() {
+        state = true;
+        color = Color.RED;
+        brightness = 100;
+    }
 
 }

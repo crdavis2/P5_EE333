@@ -196,6 +196,26 @@ public class Controller {
             }
         }
     }
+    
+    /**
+     * Change the state of the system to Emergency
+     *
+     * @param hubName  name of desired hub to be used
+     * @param state    "active" or "inactive" state of alert
+     */
+    public void setEmergency(String hubName, boolean state) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= hubList.size(); i++) {
+            if ( hubName.equals( hubList.get(j).getHubName() ) ) {
+                hubList.get(j).setEmergency(state);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
 ///////////////////////End of Group Functionalities/////////////////////////////
     
     /**
