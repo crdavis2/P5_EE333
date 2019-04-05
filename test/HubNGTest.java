@@ -4,14 +4,8 @@
  * Assignment:  P5 - EE333 Spring 2019
  * Vers: 1.0.0 04/04/2019 CRD - initial coding
  *
- * Credits:  (if any for sections of code)
  */
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import static org.testng.Assert.*;
 import org.testng.annotations.AfterMethod;
