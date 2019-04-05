@@ -37,10 +37,11 @@ public class BulbNGTest {
     }
 
     /**
-     * Test of setState method, of class Bulb.
+     * Test of getState method, of class Bulb.
+     * Indirect test of setState method, of class Bulb
      */
     @Test
-    public void testSetState() {
+    public void testGetState() {
         b1.setState(true);
         b2.setState(false);
         
@@ -48,49 +49,21 @@ public class BulbNGTest {
         assertTrue(b2.getState() == false);
         // default setting is "off" (false)
         assertTrue(b3.getState() == false);
-        
-    }
-
-    /**
-     * Test of getState method, of class Bulb.
-     */
-    @Test
-    public void testGetState() {
-        assertTrue(b3.getState() == false);
-    }
-
-    /**
-     * Test of setBrightness method, of class Bulb.
-     */
-    @Test
-    public void testSetBrightness() {
-        
     }
 
     /**
      * Test of getBrightness method, of class Bulb.
+     * Indirect test of setBrightness method, of class Bulb
      */
     @Test
     public void testGetBrightness() {
-        System.out.println("getBrightness");
-        Bulb instance = null;
-        int expResult = 0;
-        int result = instance.getBrightness();
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of setColor method, of class Bulb.
-     */
-    @Test
-    public void testSetColor() {
-        System.out.println("setColor");
-        String color = "";
-        Bulb.setColor(color);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        b1.setBrightness(90);
+        b2.setBrightness(-6);
+        
+        assertEquals(b1.getBrightness(), 90);
+        assertEquals(b2.getBrightness(), 0);
+        // default setting is 100 (max brightness)
+        assertEquals(b3.getBrightness(), 100);
     }
 
     /**
@@ -98,13 +71,13 @@ public class BulbNGTest {
      */
     @Test
     public void testGetColor() {
-        System.out.println("getColor");
-        Bulb instance = null;
-        String expResult = "";
-        String result = instance.getColor();
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        b1.setColor("red");
+        b2.setColor("BluE");
+        
+        assertEquals(b1.getColor(), "RED");
+        assertEquals(b2.getColor(), "BLUE");
+        // default setting is white 
+        assertEquals(b3.getColor(), "WHITE");
     }
 
     /**
@@ -112,13 +85,12 @@ public class BulbNGTest {
      */
     @Test
     public void testGetBulbName() {
-        System.out.println("getBulbName");
-        Bulb instance = null;
-        String expResult = "";
-        String result = instance.getBulbName();
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(b1.getBulbName(), "TestBulb01");
+        assertEquals(b2.getBulbName(), "TestBulb02");
+        
+        String newBulbName = "ChangedNameTestBulb03";
+        b2.setBulbName(newBulbName);
+        assertEquals(b2.getBulbName(), "ChangedNameTestBulb03");
     }
 
     /**
@@ -126,13 +98,9 @@ public class BulbNGTest {
      */
     @Test
     public void testGetBulbID() {
-        System.out.println("getBulbID");
-        Bulb instance = null;
-        String expResult = "";
-        String result = instance.getBulbID();
-        assertEquals(result, expResult);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(b1.getBulbID(), "Bulb-01");
+        assertEquals(b2.getBulbID(), "Bulb-02");
+        assertEquals(b3.getBulbID(), "Bulb-03");
     }
 
 }

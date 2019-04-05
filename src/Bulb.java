@@ -18,12 +18,12 @@ public class Bulb {
         WHITE, RED, ORANGE, YELLOW, GREEN, BLUE, INDIGO, VIOLET
     }
     
-    private static  boolean state;
-    private static  int     brightness;
-    private static  Color   color;
+    private boolean state;
+    private int     brightness;
+    private Color   color;
     private String  id;
     private String  bulbName;
-    private int     bulbCount = 1;
+    private int     bulbCount = 0;
     
     /**
      * Constructor for objects of class Bulb
@@ -34,8 +34,9 @@ public class Bulb {
         state = false;
         brightness = 100;
         color = Color.WHITE;
-        id = "Bulb-0" + bulbCount;
+        id = "Bulb-0" + ++bulbCount;
         bulbCount++;
+
     }
     
     /**
@@ -43,8 +44,8 @@ public class Bulb {
     * 
     * @param state "on" or "off" value of bulb (true is on, false is off)
     */
-    public static void setState(boolean state) {
-        Bulb.state = state;
+    public void setState(boolean state) {
+        this.state = state;
     }
     
     
@@ -64,13 +65,13 @@ public class Bulb {
     * 
     * @param brightness new brightness value 0-100 with 100 the brightest
     */
-    public static void setBrightness(int brightness) {
+    public void setBrightness(int brightness) {
         if (brightness < 0) {
-            Bulb.brightness = 0;
+            this.brightness = 0;
         } else if (brightness > 100) {
-            Bulb.brightness = 100;
+            this.brightness = 100;
         } else {
-            Bulb.brightness = brightness;
+            this.brightness = brightness;
         }
     }
     
@@ -89,33 +90,33 @@ public class Bulb {
     * 
     * @param color new color to be set
     */
-    public static void setColor(String color) {
+    public void setColor(String color) {
         String testStr = color.toUpperCase();
         
         switch (testStr) {
             case "WHITE":
-                Bulb.color = Color.WHITE;
+                this.color = Color.WHITE;
                 break;
             case "RED":
-                Bulb.color = Color.RED;
+                this.color = Color.RED;
                 break;
             case "ORANGE":
-                Bulb.color = Color.ORANGE;
+                this.color = Color.ORANGE;
                 break;
             case "YELLOW":
-                Bulb.color = Color.YELLOW;
+                this.color = Color.YELLOW;
                 break;
             case "GREEN":
-                Bulb.color = Color.GREEN;
+                this.color = Color.GREEN;
                 break;
             case "BLUE":
-                Bulb.color = Color.BLUE;
+                this.color = Color.BLUE;
                 break;
             case "INDIGO":
-                Bulb.color = Color.INDIGO;
+                this.color = Color.INDIGO;
                 break;
             case "VIOLET":
-                Bulb.color = Color.VIOLET;
+                this.color = Color.VIOLET;
                 break;
         // ERROR handling should go in a different class (hub probably)
             default:
@@ -133,6 +134,15 @@ public class Bulb {
         String returnString = c.toString();
         
         return returnString;
+    }
+    
+    /**
+    * Set (change) the name of the bulb
+    * 
+    * @param newName new name for the bulb
+    */
+    public void setBulbName(String newName) {
+        bulbName = newName;
     }
     
     /**

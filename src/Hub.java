@@ -58,27 +58,7 @@ public class Hub {
         
         for (i=0; i<= bulbList.size(); i++) {
             if ( bulbName.equals( bulbList.get(j).getBulbName() ) ) {
-                Bulb.setState(state);
-            } else {
-                // desired hub not found yet
-                j++;
-            }
-        }
-    }
-    
-    /**
-     * Change brightness of bulb
-     *
-     * @param bulbName   name of the bulb to add to the system
-     * @param brightness brightness level of the bulb
-     */
-    public static void changeBrightness(String bulbName, int brightness) {
-        int i;
-        int j = 0;
-        
-        for (i=0; i<= bulbList.size(); i++) {
-            if ( bulbName.equals( bulbList.get(j).getBulbName() ) ) {
-                Bulb.setBrightness(brightness);
+                bulbList.get(j).setState(state);
             } else {
                 // desired hub not found yet
                 j++;
@@ -89,8 +69,48 @@ public class Hub {
     /**
      * Change color of bulb
      *
-     * @param bulbName   name of the bulb to add to the system
-     * @param color brightness level of the bulb
+     * @param bulbName   current name of the bulb 
+     * @param newName    new name for the bulb
+     */
+    public static void changeBulbName(String bulbName, String newName) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= bulbList.size(); i++) {
+            if ( bulbName.equals( bulbList.get(j).getBulbName() ) ) {
+                bulbList.get(j).setBulbName(newName);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+    /**
+     * Change name of bulb
+     *
+     * @param bulbName    name of the bulb
+     * @param brightness  brightness of the bulb
+     */
+    public static void changeBrightness(String bulbName, int brightness) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= bulbList.size(); i++) {
+            if ( bulbName.equals( bulbList.get(j).getBulbName() ) ) {
+                bulbList.get(j).setBrightness(brightness);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+    /**
+     * Change color of bulb
+     *
+     * @param bulbName   name of the bulb 
+     * @param color      color level of the bulb
      */
     public static void changeColor(String bulbName, String color) {
         int i;
@@ -98,7 +118,7 @@ public class Hub {
         
         for (i=0; i<= bulbList.size(); i++) {
             if ( bulbName.equals( bulbList.get(j).getBulbName() ) ) {
-                Bulb.setColor(color);
+                bulbList.get(j).setColor(color);
             } else {
                 // desired hub not found yet
                 j++;
