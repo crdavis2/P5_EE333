@@ -15,7 +15,7 @@ import java.util.ArrayList;
 public class Hub {
 
     private String hubName;
-    ArrayList<Hub> hubList = new ArrayList<Hub>();
+    static ArrayList<Bulb> bulbList = new ArrayList<Bulb>();
     
     /**
      * Constructor for objects of class Hub with name
@@ -39,10 +39,11 @@ public class Hub {
    /**
      * Add bulb to the system
      *
-     * @param bulb the bulb to add to the system
+     * @param name name of the bulb to add to the system
      */
-    public static void addBulb(String bulbName) {
-        
+    public static void addBulb(String name) {
+        Bulb bulb = new Bulb(name);
+        bulbList.add(bulb);
     }
     
     

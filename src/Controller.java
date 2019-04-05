@@ -36,13 +36,12 @@ public class Controller {
         } else {
             controllerName = name;
         }
-
     }
     
     /**
      * Add hub to the system
      *
-     * @param hub the hub to add to the system
+     * @param name name of the hub to add to the system
      */
     public void addhub(String name) {
         Hub hub = new Hub(name);
