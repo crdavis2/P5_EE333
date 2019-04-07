@@ -23,9 +23,14 @@ public class Bulb {
     private String  id;
     private String  bulbName;
     private String  group;
+<<<<<<< HEAD
     private Color defaultColor = Color.WHITE;
 
 
+=======
+    private int     bulbCount = 1;
+    
+>>>>>>> 0d50d98844ba2d83789e823233da51ad8db9848a
     /**
      * Constructor for objects of class Bulb
      * @param name name of the bulb
@@ -126,6 +131,25 @@ public class Bulb {
     }
 
     /**
+    * Get group of the bulb
+    * 
+    * @return group name of bulb's group
+    */
+    public String getGroup() {
+        return group;
+    }
+    
+    /**
+    * Set (change) the group of the bulb. Each bulb can only be assigned
+    * to one group.
+    * 
+    * @param group new group to be set
+    */
+    public void setGroup(String group) {
+        this.group = group;
+    }
+    
+    /**
     * Set (change) the name of the bulb
     *
     * @param newName new name for the bulb
@@ -150,6 +174,16 @@ public class Bulb {
     */
     public String getBulbID() {
         return id;
+    }
+    
+    /**
+    * Set the default emergency state of the bulb
+    * 
+    */
+    public void setEmergency() {
+        state = true;
+        color = Color.RED;
+        brightness = 100;
     }
 
     /**

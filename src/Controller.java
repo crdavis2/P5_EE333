@@ -14,16 +14,25 @@ import java.util.List;
  * @author Collin Davis crdavis2@uab.edu
  */
 public class Controller {
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> 0d50d98844ba2d83789e823233da51ad8db9848a
     private int            numControllers      = 0;
     private int            numHubs             = 0;
     private int            numBulbs            = 0;
     private String         controllerName;
     private String         hubName;
+<<<<<<< HEAD
     private List<Hub>      hubList             = new ArrayList<Hub>();
     private Hub            hub                 = new Hub("hub-1");
 
 
+=======
+    private ArrayList<Hub> hubList = new ArrayList<>();
+    
+>>>>>>> 0d50d98844ba2d83789e823233da51ad8db9848a
     /**
      * Constructor for objects of class Controller with name
      *
@@ -55,6 +64,7 @@ public class Controller {
      *
      * @param bulbName name of the bulb to add to the system
      */
+<<<<<<< HEAD
     public void addBulb(String bulbName) {
         this.hub.addBulb(bulbName);
     }
@@ -120,14 +130,197 @@ public class Controller {
     }
 ///////////////////////End of Group Functionalities/////////////////////////////
 
+=======
+    public void addBulb(String hubName, String bulbName) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= hubList.size(); i++) {
+            if ( hubName.equals( hubList.get(j).getHubName() ) ) {
+                hubList.get(j).addBulb(bulbName);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+///////////////////////////////Group Functionality//////////////////////////////
+    /**
+     * Add group to the system
+     *
+     * @param hubName   name of desired hub to be used
+     * @param groupName name of group to be added
+     */
+    public void addGroup(String hubName, String groupName) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= hubList.size(); i++) {
+            if ( hubName.equals( hubList.get(j).getHubName() ) ) {
+                hubList.get(j).addGroup(groupName);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+    /**
+     * Add group to the system
+     *
+     * @param hubName   name of desired hub to be used
+     * @param groupName name of group to be added
+     * @param bulbName  name of bulb to be added to group
+     */
+    public void addBulbToGroup(String hubName, String bulbName, 
+                               String groupName) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= hubList.size(); i++) {
+            if ( hubName.equals( hubList.get(j).getHubName() ) ) {
+                hubList.get(j).addBulbToGroup(bulbName, groupName);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+    /**
+     * Change the group of the bulb
+     *
+     * @param hubName   name of desired hub to be used
+     * @param bulbName  name of bulb to be added
+     * @param groupName group to which the bulb is added
+     */
+    public void setBulbGroup(String hubName, String bulbName, 
+                                String groupName) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= hubList.size(); i++) {
+            if ( hubName.equals( hubList.get(j).getHubName() ) ) {
+                hubList.get(j).setBulbGroup(bulbName, groupName);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+    /**
+     * Changes the status of all bulbs within a group
+     *
+     * @param hubName  name of desired hub to be used
+     * @param groupName    group to which the bulb is added
+     * @param state    state to which bulbs will be set
+     */
+    public void setGroupState(String hubName, String groupName,
+                                 boolean state) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= hubList.size(); i++) {
+            if ( hubName.equals( hubList.get(j).getHubName() ) ) {
+                hubList.get(j).setGroupState(groupName, state);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+    /**
+     * Changes the color of all bulbs within a group
+     *
+     * @param hubName  name of desired hub to be used
+     * @param groupName    group to which the bulb is added
+     * @param color    state to which bulbs will be set
+     */
+    public void setGroupColor(String hubName, String groupName,
+                                 String color) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= hubList.size(); i++) {
+            if ( hubName.equals( hubList.get(j).getHubName() ) ) {
+                hubList.get(j).setGroupColor(groupName, color);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+    /**
+     * Changes the brightness of all bulbs within a group
+     *
+     * @param hubName    name of desired hub to be used
+     * @param groupName  group to which the bulb is added
+     * @param brightness state to which bulbs will be set
+     */
+    public void setGroupBrightness(String hubName, String groupName,
+                                      int brightness) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= hubList.size(); i++) {
+            if ( hubName.equals( hubList.get(j).getHubName() ) ) {
+                hubList.get(j).setGroupBrightness(groupName, brightness);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+    
+    /**
+     * Change the state of the system to Emergency
+     *
+     * @param hubName  name of desired hub to be used
+     * @param state    "active" or "inactive" state of alert
+     */
+    public void setEmergency(String hubName, boolean state) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= hubList.size(); i++) {
+            if ( hubName.equals( hubList.get(j).getHubName() ) ) {
+                hubList.get(j).setEmergency(state);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+    }
+///////////////////////End of Group Functionalities/////////////////////////////
+    
+>>>>>>> 0d50d98844ba2d83789e823233da51ad8db9848a
     /**
      * Change the state of the bulb
      *
      * @param bulbName name of bulb to be added
      * @param state    "on" or "off" state to be changed
      */
+<<<<<<< HEAD
     public void setBulbState(String bulbName, boolean state) {
         this.hub.setBulbState(bulbName, state);
+=======
+    public void setBulbState(String hubName, String bulbName, boolean state) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= hubList.size(); i++) {
+            if ( hubName.equals( hubList.get(j).getHubName() ) ) {
+                hubList.get(j).setBulbState(bulbName, state);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+>>>>>>> 0d50d98844ba2d83789e823233da51ad8db9848a
     }
 
     /**
@@ -136,8 +329,24 @@ public class Controller {
      * @param bulbName   name of bulb to be added
      * @param brightness level of brightness to be changed
      */
+<<<<<<< HEAD
     public void setBulbBrightness(String bulbName, int brightness) {
         this.hub.setBulbBrightness(bulbName, brightness);
+=======
+    public void setBulbBrightness(String hubName, String bulbName, 
+                                     int brightness) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= hubList.size(); i++) {
+            if ( hubName.equals( hubList.get(j).getHubName() ) ) {
+                hubList.get(j).setBulbBrightness(bulbName, brightness);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+>>>>>>> 0d50d98844ba2d83789e823233da51ad8db9848a
     }
 
     /**
@@ -146,8 +355,24 @@ public class Controller {
      * @param bulbName   name of bulb to be added
      * @param color      color of bulb to be changed
      */
+<<<<<<< HEAD
     public void setBulbColor(String bulbName, String color) {
         this.hub.setBulbColor(bulbName, color);
+=======
+    public void setBulbColor(String hubName, String bulbName, 
+                                     String color) {
+        int i;
+        int j = 0;
+        
+        for (i=0; i<= hubList.size(); i++) {
+            if ( hubName.equals( hubList.get(j).getHubName() ) ) {
+                hubList.get(j).setBulbColor(bulbName, color);
+            } else {
+                // desired hub not found yet
+                j++;
+            }
+        }
+>>>>>>> 0d50d98844ba2d83789e823233da51ad8db9848a
     }
     
 
