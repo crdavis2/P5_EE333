@@ -15,21 +15,13 @@ import java.util.List;
  */
 public class Hub {
 
-<<<<<<< HEAD
     private String      hubName;
     private List<Bulb>  bulbList       = new ArrayList<Bulb>();
     private List<Group> groupList      = new ArrayList<Group>();
     private int         bulbCount      = 0;
-
-
-=======
-    private String           hubName;
-    private ArrayList<Bulb>  bulbList       = new ArrayList<>();
-    private ArrayList<Group> groupList      = new ArrayList<>();
     private boolean          emergencyState = false;
 
     
->>>>>>> 0d50d98844ba2d83789e823233da51ad8db9848a
     /**
      * Constructor for objects of class Hub with name
      *
@@ -60,15 +52,15 @@ public class Hub {
      * @param bulbName name of the bulb to add to the system
      */
     public void addBulb(String bulbName) {
-<<<<<<< HEAD
         Bulb bulb = new Bulb(bulbName, ++bulbCount);
-=======
-        Bulb bulb = new Bulb(bulbName);
->>>>>>> 0d50d98844ba2d83789e823233da51ad8db9848a
         bulbList.add(bulb);
     }
 
-
+    /**
+     * Returns list of Bulbs
+     *
+     * @return list of bulbs
+     */
     public List<Bulb> getBulbList() {
         return this.bulbList;
     }
@@ -118,56 +110,6 @@ public class Hub {
             }
         }
     }
-
-    /**
-     * Add group to the system
-     *
-     * @param groupName name of the group to add to the system
-     */
-    public void addGroup(String groupName) {
-        Group group = new Group(groupName);
-        groupList.add(group);
-    }
-    
-    /**
-     * Add bulb to the specified group
-     *
-     * @param bulbName  name of the bulb to add to the system
-     * @param groupName name of the group to which the bulb is added
-     */
-    public void addBulbToGroup(String bulbName, String groupName) {
-        int i;
-        int j = 0;
-        
-        for (i=0; i<= bulbList.size(); i++) {
-            if ( bulbName.equals( bulbList.get(j).getBulbName() ) ) {
-                bulbList.get(j).setGroup(groupName);
-            } else {
-                // desired hub not found yet
-                j++;
-            }
-        }
-    }
-    
-    /**
-     * Change group of bulb
-     *
-     * @param bulbName     name of the bulb to add to the system
-     * @param newGroupName new group to which the bulb is added
-     */
-    public void setBulbGroup(String bulbName, String newGroupName) {
-        int i;
-        int j = 0;
-        
-        for (i=0; i<= bulbList.size(); i++) {
-            if ( bulbName.equals( bulbList.get(j).getBulbName() ) ) {
-                bulbList.get(j).setGroup(newGroupName);
-            } else {
-                // desired hub not found yet
-                j++;
-            }
-        }
-    }
     
     /**
      * Change state of bulb
@@ -176,7 +118,6 @@ public class Hub {
      * @param state    "on" or "off" state to be changed
      */
     public void setBulbState(String bulbName, boolean state) {
-<<<<<<< HEAD
         int i;
 
         for (i=0; i< bulbList.size(); i++) {
@@ -195,8 +136,6 @@ public class Hub {
      * @param state     "on" or "off" state to be changed
      */
     public void setGroupState(String groupName, boolean state) {
-=======
->>>>>>> 0d50d98844ba2d83789e823233da51ad8db9848a
         int i;
 
         for (i=0; i< bulbList.size(); i++) {
@@ -207,31 +146,8 @@ public class Hub {
             }
         }
     }
-
-    /**
-<<<<<<< HEAD
-=======
-     * Change state of all bulbs within a group
-     *
-     * @param groupName name of the group to edit
-     * @param state     "on" or "off" state to be changed
-     */
-    public void setGroupState(String groupName, boolean state) {
-        int i;
-        int j = 0;
-        
-        for (i=0; i<= bulbList.size(); i++) {
-            if ( groupName.equals( bulbList.get(j).getGroup() ) ) {
-                bulbList.get(j).setState(state);
-            } else {
-                // desired hub not found yet
-                j++;
-            }
-        }
-    }
     
     /**
->>>>>>> 0d50d98844ba2d83789e823233da51ad8db9848a
      * Change color of all bulbs within a group
      *
      * @param groupName name of the group to edit
@@ -239,7 +155,6 @@ public class Hub {
      */
     public void setGroupColor(String groupName, String color) {
         int i;
-<<<<<<< HEAD
 
         for (i=0; i< bulbList.size(); i++) {
             if ( groupName.equals( bulbList.get(i).getGroup() ) ) {
@@ -250,21 +165,6 @@ public class Hub {
                 
             }
             
-        }
-    }
-
-    /**
-     * Change brightness of all bulbs within a group
-=======
-        int j = 0;
-        
-        for (i=0; i<= bulbList.size(); i++) {
-            if ( groupName.equals( bulbList.get(j).getGroup() ) ) {
-                bulbList.get(j).setColor(color);
-            } else {
-                // desired hub not found yet
-                j++;
-            }
         }
     }
     
@@ -288,25 +188,6 @@ public class Hub {
         }
     }
     
-    /**
-     * Change name of bulb
->>>>>>> 0d50d98844ba2d83789e823233da51ad8db9848a
-     *
-     * @param groupName  name of the group to edit
-     * @param brightness brightness of bulb
-     */
-    public void setGroupBrightness(String groupName, int brightness) {
-        int i;
-
-        for (i=0; i< bulbList.size(); i++) {
-            if ( groupName.equals( bulbList.get(i).getGroup() ) ) {
-                bulbList.get(i).setBrightness(brightness);
-            } else {
-                // desired bulb not found yet
-            }
-        }
-    }
-
     /**
      * Change name of bulb
      *
@@ -360,7 +241,6 @@ public class Hub {
             }
         }
     }
-<<<<<<< HEAD
 
     /**
      * Return the Bulb object
@@ -371,31 +251,4 @@ public class Hub {
     public Bulb getBulb(int index) {
         return this.bulbList.get(index);
     }
-=======
-    
-    
-   /**
-     * Change brightness of all bulbs within a group
-     *
-     * @param state "active" or "inactive" state of alert
-     */
-    public void setEmergency(boolean state) {
-        int i;
-        ArrayList<Bulb>  preEmergencyBulbList = new ArrayList<>();
-        
-        if ((emergencyState == false) && (state == true)) {
-            preEmergencyBulbList = bulbList;
-            for (i=0; i <= bulbList.size(); i++) {
-                bulbList.get(i).setEmergency();
-            }
-        } else if ((emergencyState == true) && (state == false)) {
-            for (i=0; i <= bulbList.size(); i++) {
-                Bulb bulbCurrent = bulbList.get(i);
-                Bulb bulbPrior   = preEmergencyBulbList.get(i);
-                bulbCurrent = bulbPrior;
-            }
-        }
-    } 
->>>>>>> 0d50d98844ba2d83789e823233da51ad8db9848a
-
 }

@@ -1,0 +1,25 @@
+Success if int of bulb name and id are same:
+bulb-1
+bulbid-1
+
+bulb-2
+bulbid-2
+
+bulb-3
+bulbid-3
+
+bulb-4
+bulbid-4
+
+bulb-1 state is: false
+
+Color of bulb-1 is BLUE
+Color of bulb-2 is GREEN
+
+Brightness of bulb-1 is 92
+Brightness of bulb-2 is 10
+
+bulb-3 and bulb-4 added to group.
+Group color is set to yellow.
+Color of bulb-3 is YELLOW
+Color of bulb-4 is YELLOW

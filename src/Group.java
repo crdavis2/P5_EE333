@@ -16,23 +16,14 @@
  * @author Collin Davis crdavis2@uab.edu
  */
 public class Group {
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 0d50d98844ba2d83789e823233da51ad8db9848a
-    private String groupName;
+        private String groupName;
 
     /**
      * Constructor for objects of class Group with name
-<<<<<<< HEAD
      *
-=======
-     * 
->>>>>>> 0d50d98844ba2d83789e823233da51ad8db9848a
      * @param name text for name. If null, the group name will
      * be set to "New group"
-     *
      */
     public Group (String name) {
         if (name == null) {
