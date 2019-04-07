@@ -27,9 +27,9 @@ public class BulbNGTest {
 
     @BeforeMethod
     public void setUpMethod() throws Exception {
-        b1 = new Bulb("TestBulb01");
-        b2 = new Bulb("TestBulb02");
-        b3 = new Bulb("TestBulb03");
+        b1 = new Bulb("TestBulb01", 1);
+        b2 = new Bulb("TestBulb02", 2);
+        b3 = new Bulb("TestBulb03", 3);
     }
 
     @AfterMethod
@@ -98,9 +98,9 @@ public class BulbNGTest {
      */
     @Test
     public void testGetBulbID() {
-        assertEquals(b1.getBulbID(), "Bulb-01");
-        assertEquals(b2.getBulbID(), "Bulb-02");
-        assertEquals(b3.getBulbID(), "Bulb-03");
+        assertEquals(b1.getBulbID(), "bulbid-1");
+        assertEquals(b2.getBulbID(), "bulbid-2");
+        assertEquals(b3.getBulbID(), "bulbid-3");
     }
 
 }

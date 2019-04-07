@@ -15,11 +15,10 @@ import java.util.List;
  */
 public class Hub {
 
-    private String      hubName;
-    private List<Bulb>  bulbList       = new ArrayList<Bulb>();
-    private List<Group> groupList      = new ArrayList<Group>();
-    private int         bulbCount      = 0;
-    private boolean          emergencyState = false;
+    private String        hubName;
+    private List<Bulb>    bulbList       = new ArrayList<Bulb>();
+    private List<Group>   groupList      = new ArrayList<Group>();
+    private int           bulbCount      = 0;
 
     
     /**

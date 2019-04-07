@@ -21,7 +21,7 @@ public class Controller {
     private String         controllerName;
     private String         hubName;
     private List<Hub>      hubList             = new ArrayList<Hub>();
-    private Hub            hub                 = new Hub("hub-1");
+    protected Hub          hub                 = new Hub("hub-1");
     
     /**
      * Constructor for objects of class Controller with name

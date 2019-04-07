@@ -24,7 +24,6 @@ public class Bulb {
     private String  bulbName;
     private String  group;
     private Color   defaultColor = Color.WHITE;
-    private int     bulbCount = 1;
     
     /**
      * Constructor for objects of class Bulb
